@@ -1,0 +1,32 @@
+
+
+// Function to create a post
+function createPost(post) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log('Post created:', post);
+      resolve(post);
+    }, 1000);
+  });
+}
+
+// Function to update last user activity time
+function updateLastUserActivityTime() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      const lastActivityTime = new Date();
+      console.log('Last activity time updated:', lastActivityTime);
+      resolve(lastActivityTime);
+    }, 1000);
+  });
+}
+
+// Function to delete a post
+function deletePost(post) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      console.log('Post deleted:', post);
+      resolve(post);
+    }, 1000);
+  });
+}
