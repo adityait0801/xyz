@@ -1,0 +1,56 @@
+// Function to simulate getting butter
+function getButter() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Husband got butter.");
+      resolve("Butter");
+    }, 1000);
+  });
+}
+
+// New promise for getting cold drinks
+function getColdDrinks() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Got cold drinks.");
+      resolve("Cold Drinks");
+    }, 500);
+  });
+}
+
+// Function to perform tasks sequentially using promises
+function performTasksWithPromises() {
+  getButter()
+    .then(() => getColdDrinks())
+    .then(() => {
+      console.log("Other tasks completed.");
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+}
+
+// Async/await version
+async function performTasksWithAsyncAwait() {
+
+    await getButter();
+    await getColdDrinks();
+}
+
+async function createPost(post) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Post created: ${post}`);
+      resolve(post);
+    }, 1000);
+  });
+}
+
+async function deletePost(postId) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`Post deleted: ${postId}`);
+      resolve();
+    }, 500);
+  });
+}
